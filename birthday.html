@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Birthday Wisher</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; background-color: #f0f0f0; }
+        h1 { color: #333; }
+        form { display: inline-block; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input, button { margin: 10px; padding: 10px; width: 200px; }
+        button { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>Automated Birthday Wisher</h1>
+    <p>Here you can add anyone's birthday</p>
+    <form id="birthday-form">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="date" id="date" required>
+        <button type="submit">Add Birthday</button>
+    </form>
+    <script>
+        document.getElementById('birthday-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const date = document.getElementById('date').value;
+            alert(`Birthday added for ${name} on ${date}. (In a real app, this would save to a database and trigger automation.)`);
+            // In a full app, this would send a POST request to the backend.
+        });
+    </script>
+</body>
+</html>
